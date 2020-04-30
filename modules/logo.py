@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 #[*] Name of the tool: GeoTrackerIP
-#[*] Description: "Geolocate an IP address or Domain"
+#[*] Description: Geolocate an IP address or Domain.
 #[*] Version: 2.0
 #[*] Author: JRIC2002
 #[*] Module of the tool: GeoTrackerIP
 #[*] Date of creation: 15/03/2019
 #[*] Date of last update: 29/04/2020
 
-""" Logo de la herramienta GeoTrackerIP. """
+"""Logo de la herramienta GeoTrackerIP."""
 
 __author__ = "JRIC2002"
 __copyright__ = "Copyright 2019, JRIC2002"
@@ -21,7 +21,7 @@ __email__ = "joselito18032002@gmail.com"
 __status__ = "Production"
 
 def logo():
-    """ Imprime el logo de la herramienta GeoTrackerIP. """
+    """Imprime el logo de la herramienta GeoTrackerIP."""
 
     #Foreground
     black = "\033[1;30m"
