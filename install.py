@@ -1,14 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-#[*] Name of the tool: GeoTrackerIP
-#[*] Description: Geolocate an IP address or Domain.
-#[*] Version: 2.0
-#[*] Author: JRIC2002
-#[*] Installer of the tool: GeoTrackerIP
-#[*] Date of creation: 15/03/2019
-#[*] Date of last update: 29/04/2020
-
 #MODULES
 
 #External Modules
