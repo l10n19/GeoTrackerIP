@@ -15,7 +15,8 @@ from modules import logo
 #COLORS
 
 #Foreground
-black = "\033[1;30m"
+black = "\033[0;30m"
+gray = "\033[1;30m"
 red = "\033[1;31m"
 green = "\033[1;32m"
 yellow = "\033[1;33m" 
@@ -25,7 +26,8 @@ cyan = "\033[1;36m"
 white = "\033[1;37m"
 
 #Background
-b_black = "\033[1;40m"
+b_black = "\033[0;40m"
+b_gray = "\033[1;40m"
 b_red = "\033[1;41m"
 b_green = "\033[1;42m"
 b_yellow = "\033[1;43m"
