@@ -10,7 +10,7 @@ import os
 import sys
 
 #Internal Modules
-from modules import logo
+from modules import start
 
 #COLORS
 
@@ -49,9 +49,6 @@ def clean():
         
 #PROCESS OF INSTALLING
 def install():
-    #Logo
-    logo.logo()
-
     bucle = itertools.cycle("/-|-\|")
     for i in range(30):
         print("{}[{}*{}] {}Installing Modules...{}{}".format(cyan, white, cyan, green, next(bucle), white), end='\r')
@@ -66,4 +63,5 @@ def install():
 
 #START
 clean()
+start.function.logo()
 install()
