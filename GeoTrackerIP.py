@@ -16,7 +16,7 @@ import json
 import sys
 
 #Internal Modules
-from modules import logo
+from modules import start
 from modules import functions
 
 #COLORS
@@ -44,26 +44,26 @@ b_cyan = "\033[1;46m"
 b_white = "\033[1;47m"
 
 #START
-if len(sys.argv) == 3:
-    if sys.argv[1] == "-t" or sys.argv[1] == "--target":
-        logo.function.logo()
-        functions.function.geolocation_ip(sys.argv[2])
-    else:
-        logo.function.logo()
-        logo.function.error_args()
+if len(sys.argv) == 1:
+    start.function.logo()
+    start.functionhelp_menu()
 elif len(sys.argv) == 2:
     if sys.argv[1] == "-h" or sys.argv[1] == "--help":
-        logo.function.logo()
-        logo.function.help_menu()
+        start.function.logo()
+        start.function.help_menu()
     elif sys.argv[1] == "-v" or sys.argv[1] == "--version":
-        logo.function.logo()
-        logo.function.version()
+        start.function.logo()
+        start.function.version()
     else:
-        logo.function.logo()
-        logo.function.error_args()
-elif len(sys.argv) == 1:
-    logo.function.logo()
-    logo.functionhelp_menu()
+        start.function.logo()
+        start.function.error_args()
+elif len(sys.argv) == 3:
+    if sys.argv[1] == "-t" or sys.argv[1] == "--target":
+        start.function.logo()
+        functions.function.geolocation_ip(sys.argv[2])
+    else:
+        start.function.logo()
+        start.function.error_args()
 else:
-    logo.function.logo()
-    logo.function.error_args()
+    start.function.logo()
+    start.function.error_args()
