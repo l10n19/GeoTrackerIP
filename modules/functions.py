@@ -101,4 +101,4 @@ class MyClass:
 #START
 function = MyClass()
 if __name__ == "__main__":
-    print("Esto es un módulo...")
+    print("{}Esto es un módulo...".format(function.white))
