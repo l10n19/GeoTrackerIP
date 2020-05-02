@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 #[*] Name of the tool: GeoTrackerIP
@@ -6,7 +6,7 @@
 #[*] Version: 2.0
 #[*] Author: JRIC2002
 #[*] Date of creation: 15/03/2019
-#[*] Date of last update: 29/04/2020
+#[*] Date of last update: 01/05/2020
 
 #MODULES
 
@@ -17,6 +17,7 @@ import sys
 
 #Internal Modules
 from modules import logo
+from modules import functions
 
 #COLORS
 
@@ -42,113 +43,27 @@ b_magenta = "\033[1;45m"
 b_cyan = "\033[1;46m"
 b_white = "\033[1;47m"
 
-#HELP MENU
-def help_menu():
-    #Logo
-    logo.logo()
-    
-    #Use
-    print("{}Usage: python3 GeoTrackerIP.py [options]".format(white))
-    print("")
-    print("{}Options:".format(white))
-    print("{}   -h, --help              Show this help message and exit.".format(white))
-    print("{}   -v, --version           Show program's version number and exit.".format(white))
-    print("")
-    print("{}   Target:".format(white))
-    print("{}      At least one of these options has to be provided to define the target(s).".format(white))
-    print("")
-    print("{}      -t, --target            IP Address or Domain to be analyzed.".format(white))
-
-#ERROR OF ARGUMENT
-def error_args():
-    #Logo
-    logo.logo()
-
-    #Use
-    print("{}Usage: python3 GeoTrackerIP.py [options]".format(white))
-    print("")
-    print("{}GeoTrackerIP.py: Error: Invalid option.".format(white))
-    print("{}Use -h or --help to see the options.".format(white))
-
-#VERSION
-def version():
-    print("{}#GeoTrackerIP version 2.0".format(white))
-
-#GEOLOCATE IP ADDRESS
-def geolocationIP(ip):
-    #Logo
-    logo.logo()
-
-    #Datos del usuario
-    try:
-        print("{}IP Address/Domain(URL):{} {}".format(blue, white, ip))
-        while True:
-            if "http://" in ip:
-                ip = ip[7:]
-            elif "www." in ip:
-                ip = ip[4:]
-            elif "https://" in ip:
-                ip = ip[8:]
-            else:
-                break
-
-        api_url = "http://ip-api.com/json/"
-        res = requests.get(api_url+ip)
-        datos = json.loads(res.content)
-
-        #Resultados almacenados en variables
-        target = ip
-        direccion_ip = datos['query']
-        asn = datos['as']
-        ciudad = datos['city']
-        pais = datos['country']
-        codigo_pais = datos['countryCode']
-        isp = datos['isp']
-        latitud = datos['lat']
-        longitud = datos['lon']
-        organizacion = datos['org']
-        codigo_region = datos['region']
-        region = datos['regionName']
-        timezone = datos['timezone']
-        codigo_zip = datos['zip']
-        google_maps = "https://www.google.com/maps/search/?api=1&query={},{}".format(latitud, longitud)
-
-        #Imprime los resultados
-        print("")
-        print("{}[{}*{}] {}Target:{} {}".format(green, white, green, white, green, target))
-        print("{}[{}*{}] {}IP:{} {}".format(green, white, green, white, green, direccion_ip))
-        print("{}[{}*{}] {}ASN:{} {}".format(green, white, green, white, green, asn))
-        print("{}[{}*{}] {}City:{} {}".format(green, white, green, white, green, ciudad))
-        print("{}[{}*{}] {}Country:{} {}".format(green, white, green, white, green, pais))
-        print("{}[{}*{}] {}Country Code:{} {}".format(green, white, green, white, green, codigo_pais))
-        print("{}[{}*{}] {}ISP:{} {}".format(green, white, green, white, green, isp))
-        print("{}[{}*{}] {}Latitude:{} {}".format(green, white, green, white, green, latitud))
-        print("{}[{}*{}] {}Longitude:{} {}".format(green, white, green, white, green, longitud))
-        print("{}[{}*{}] {}Organization:{} {}".format(green, white, green, white, green, organizacion))
-        print("{}[{}*{}] {}Region Code:{} {}".format(green, white, green, white, green, codigo_region))
-        print("{}[{}*{}] {}Region Name:{} {}".format(green, white, green, white, green, region))
-        print("{}[{}*{}] {}Timezone:{} {}".format(green, white, green, white, green, timezone))
-        print("{}[{}*{}] {}Zip Code:{} {}".format(green, white, green, white, green, codigo_zip))
-        print("{}[{}*{}] {}Google Maps:{} {}".format(green, white, green, white, green, google_maps))
-        print("{}".format(white))
-    except Exception:
-        print("")
-        print("{}Error: IP Address/Domain(URL) does not exist.{}".format(red, white))
-
 #START
 if len(sys.argv) == 3:
     if sys.argv[1] == "-t" or sys.argv[1] == "--target":
-        geolocationIP(sys.argv[2])
+        logo.function.logo()
+        functions.function.geolocation_ip(sys.argv[2])
     else:
-        error_args()
+        logo.function.logo()
+        logo.function.error_args()
 elif len(sys.argv) == 2:
     if sys.argv[1] == "-h" or sys.argv[1] == "--help":
-        help_menu()
+        logo.function.logo()
+        logo.function.help_menu()
     elif sys.argv[1] == "-v" or sys.argv[1] == "--version":
-        version()
+        logo.function.logo()
+        logo.function.version()
     else:
-        error_args()
+        logo.function.logo()
+        logo.function.error_args()
 elif len(sys.argv) == 1:
-    help_menu()
+    logo.function.logo()
+    logo.functionhelp_menu()
 else:
-    error_args()
+    logo.function.logo()
+    logo.function.error_args()
