@@ -83,4 +83,4 @@ class MyClass:
 #START
 function = MyClass()
 if __name__ == "__main__":
-    function.logo()
+    print("{}Esto es un módulo...".format(function.white))
