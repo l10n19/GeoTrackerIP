@@ -15,8 +15,6 @@ import requests
 import json
 import sys
 
-#Internal modules
-
 class Color:
     """ Colores en código ANSI. """
 
