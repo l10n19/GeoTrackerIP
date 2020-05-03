@@ -38,7 +38,7 @@ class Color:
 color = Color()
 
 def clean():
-    """ Limpia la consola. """
+    """ Limpia la consola de comandos. """
 
     if sys.platform.startswith('win'):
         os.system('cls')
