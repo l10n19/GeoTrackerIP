@@ -9,8 +9,6 @@ import time
 import os
 import sys
 
-#Internal Modules
-
 class Color:
     """ Colores en código ANSI. """
 
