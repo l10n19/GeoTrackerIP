@@ -46,7 +46,7 @@ color = Color()
 class Start:
     """ Inicio de la herramienta GeoTrackerIP. """
 
-    def __init__self(self):
+    def __init__(self):
         """ Variables de instancia. """
         pass
 
