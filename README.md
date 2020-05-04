@@ -39,7 +39,7 @@ Esta herramienta es solo para fines educativos. El desarrollador no asume ningun
    ```
 
 ## Uso
-**Menú de Ayuda**  
+**Menú de ayuda**  
 Para ver el menú de ayuda puedes utilizar la opción `-h` o `--help`.
 ```bash
 python3 GeoTrackerIP.py --help
