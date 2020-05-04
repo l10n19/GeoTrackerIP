@@ -88,7 +88,7 @@ class Start:
         print("{}Usage: python3 GeoTrackerIP.py [options]".format(color.white))
         print("")
         print("GeoTrackerIP.py: Error: Invalid option.")
-        print("Use -h or --help to see the options.")
+        print("Use -h or --help to see the help menu.")
 
 #Instancia de la clase Start
 start = Start()
