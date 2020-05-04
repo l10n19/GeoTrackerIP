@@ -51,7 +51,7 @@ class Start:
         pass
 
     def logo(self):
-        """ Imprime logo de la herramienta GeoTrackerIP. """
+        """ Imprime el logo de la herramienta GeoTrackerIP. """
     
         print("")
         print("      {}__ ___ __ {}_____ ___  __   ____  _____ ___   {} _ ___ ".format(color.blue, color.green, color.cyan))
