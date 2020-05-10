@@ -137,7 +137,7 @@ class Functions():
             codigo_zip = datos['zip']
             google_maps = "https://www.google.com/maps/search/?api=1&query={},{}".format(latitud, longitud)
 
-            #Imprime los resultados
+            #Imprime los resultados obtenidos
             print("")
             print("{}[{}*{}] {}Target:{} {}".format(color.green, color.white, color.green, color.white, color.green, target))
             print("{}[{}*{}] {}IP:{} {}".format(color.green, color.white, color.green, color.white, color.green, direccion_ip))
