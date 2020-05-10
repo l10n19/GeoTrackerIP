@@ -78,7 +78,7 @@ class Start:
         print("      -t, --target            IP Address or Domain to be analyzed.")
     
     def version(self):
-        """ Imprime la version de la herramienta GeoTrackerIP. """
+        """ Imprime la versión de la herramienta GeoTrackerIP. """
     
         print("{}#GeoTrackerIP version 2.0".format(color.white))
     
