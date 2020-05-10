@@ -24,7 +24,7 @@ Esta herramienta es solo para fines educativos. El desarrollador no asume ningun
    ```bash
    cd GeoTrackerIP
    ```
-3. Dar permisos de ejecución a los archivos.
+3. Dar permiso de ejecución a los archivos.
    ```bash
    chmod +x GeoTrackerIP.py
    chmod +x install.py
