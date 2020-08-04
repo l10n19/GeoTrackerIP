@@ -56,7 +56,7 @@ def logo():
     print("     {}__ ___ __ {}_____ ___  __   ____  _____ ___   {} _ ___ ".format(color.blue, color.green, color.cyan))
     print("     {}/ _] __/__\{}_   _| _ \/  \ / _/ |/ / __| _ \{}__{}| | _,\ ".format(color.blue, color.green, color.white, color.cyan))
     print("    {}| [/\ _| \/ |{}| | | v / /\ | \_|   <| _|| v /{}__{}| | v_/ ".format(color.blue, color.green, color.white, color.cyan))
-    print("     {}\__/___\__/ {}|_| |_|_\_||_|\__/_|\_\___|_|_\  {}|_|_|   {}v2.0 ".format(color.blue, color.green, color.cyan, color.white))
+    print("     {}\__/___\__/ {}|_| |_|_\_||_|\__/_|\_\___|_|_\  {}|_|_|   {}v2.1 ".format(color.blue, color.green, color.cyan, color.white))
     print("")
     print("               {}<<< {}Tool coded by:{} @JRIC2002 {}>>>{}".format(color.red, color.yellow, color.white, color.red, color.white))
     print("    {}<<< {}Description:{} Geolocate an IP address or Domain {}>>>{}".format(color.red, color.yellow, color.white, color.red, color.white))
@@ -68,7 +68,7 @@ def install():
     bucle = itertools.cycle("/-|-\|")
     for i in range(30):
         print("{}[{}*{}] {}Installing Modules...{}{}".format(color.cyan, color.white, color.cyan, color.green, next(bucle),color.white), end='\r')
-        time.sleep(0.1) 
+        time.sleep(0.1)
     print("")
     print("")
     os.system("python3 -m pip install requests")
