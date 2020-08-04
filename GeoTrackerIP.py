@@ -3,10 +3,10 @@
 
 #[*] Name of the tool: GeoTrackerIP
 #[*] Description: Geolocate an IP address or Domain.
-#[*] Version: 2.0
+#[*] Version: 2.1
 #[*] Author: JRIC2002
 #[*] Date of creation: 15/03/2019
-#[*] Date of last update: 03/05/2020
+#[*] Date of last update: 03/08/2020
 
 #MODULES
 
@@ -57,7 +57,7 @@ class Start:
         print("      {}__ ___ __ {}_____ ___  __   ____  _____ ___   {} _ ___ ".format(color.blue, color.green, color.cyan))
         print("     {}/ _] __/__\{}_   _| _ \/  \ / _/ |/ / __| _ \{}__{}| | _,\ ".format(color.blue, color.green, color.white, color.cyan))
         print("    {}| [/\ _| \/ |{}| | | v / /\ | \_|   <| _|| v /{}__{}| | v_/ ".format(color.blue, color.green, color.white, color.cyan))
-        print("     {}\__/___\__/ {}|_| |_|_\_||_|\__/_|\_\___|_|_\  {}|_|_|   {}v2.0 ".format(color.blue, color.green, color.cyan, color.white))
+        print("     {}\__/___\__/ {}|_| |_|_\_||_|\__/_|\_\___|_|_\  {}|_|_|   {}v2.1 ".format(color.blue, color.green, color.cyan, color.white))
         print("")
         print("               {}<<< {}Tool coded by:{} @JRIC2002 {}>>>{}".format(color.red, color.yellow, color.white, color.red, color.white))
         print("    {}<<< {}Description:{} Geolocate an IP address or Domain {}>>>{}".format(color.red, color.yellow, color.white, color.red, color.white))
@@ -80,7 +80,7 @@ class Start:
     def version(self):
         """ Imprime la versión de la herramienta GeoTrackerIP. """
     
-        print("{}#GeoTrackerIP version 2.0".format(color.white))
+        print("{}#GeoTrackerIP version 2.1".format(color.white))
     
     def error_args(self):
         """ Imprime un mensaje de error de argumentos. """
@@ -93,7 +93,7 @@ class Start:
 #Instancia de la clase Start
 start = Start()
 
-class Functions():
+class Functions:
     """ Fucionalidades de la herramienta GeoTrackerIP. """
     
     def __init__(self):
@@ -116,13 +116,14 @@ class Functions():
                 else:
                     break
 
-            api_url = "http://ip-api.com/json/"
-            res = requests.get(api_url + ip)
+            api_url = "http://ip-api.com/json/{}?fields=status,message,country,countryCode,region,regionName,city,zip,lat,lon,timezone,isp,org,as,mobile,proxy,query".format(ip)
+            res = requests.get(api_url)
             datos = json.loads(res.content)
 
             #Resultados almacenados en variables
             target = ip
             direccion_ip = datos['query']
+            status = datos['status']
             asn = datos['as']
             ciudad = datos['city']
             pais = datos['country']
@@ -135,11 +136,14 @@ class Functions():
             region = datos['regionName']
             timezone = datos['timezone']
             codigo_zip = datos['zip']
+            mobile = datos['mobile']
+            proxy = datos['proxy']
             google_maps = "https://www.google.com/maps/search/?api=1&query={},{}".format(latitud, longitud)
 
             #Imprime los resultados obtenidos
             print("")
             print("{}[{}*{}] {}Target:{} {}".format(color.green, color.white, color.green, color.white, color.green, target))
+            print("{}[{}*{}] {}Status:{} {}".format(color.green, color.white, color.green, color.white, color.green, status))
             print("{}[{}*{}] {}IP:{} {}".format(color.green, color.white, color.green, color.white, color.green, direccion_ip))
             print("{}[{}*{}] {}ASN:{} {}".format(color.green, color.white, color.green, color.white, color.green, asn))
             print("{}[{}*{}] {}City:{} {}".format(color.green, color.white, color.green, color.white, color.green, ciudad))
@@ -153,6 +157,8 @@ class Functions():
             print("{}[{}*{}] {}Region Name:{} {}".format(color.green, color.white, color.green, color.white, color.green, region))
             print("{}[{}*{}] {}Timezone:{} {}".format(color.green, color.white, color.green, color.white, color.green, timezone))
             print("{}[{}*{}] {}Zip Code:{} {}".format(color.green, color.white, color.green, color.white, color.green, codigo_zip))
+            print("{}[{}*{}] {}Mobile:{} {}".format(color.green, color.white, color.green, color.white, color.green, mobile))
+            print("{}[{}*{}] {}Proxy:{} {}".format(color.green, color.white, color.green, color.white, color.green, proxy))
             print("{}[{}*{}] {}Google Maps:{} {}".format(color.green, color.white, color.green, color.white, color.green, google_maps))
             print("{}".format(color.white))
         except Exception:
