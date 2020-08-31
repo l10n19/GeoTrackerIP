@@ -1,5 +1,5 @@
 # GeoTrackerIP
-![GeoTracker - Version](https://img.shields.io/badge/GeoTrackerIP-2.2-brightgreen)
+![GeoTracker - Version](https://img.shields.io/badge/GeoTrackerIP-v2.2-brightgreen)
 ![Release - Stable](https://img.shields.io/badge/Release-Stable-brightgreen)
 ![Supported OS - Linux](https://img.shields.io/badge/Supported%20OS-Linux-blue)
 
