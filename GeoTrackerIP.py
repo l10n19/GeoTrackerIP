@@ -1,11 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-#[*] Name of the tool: GeoTrackerIP
-#[*] Description: Geolocate an IP address or Domain.
-#[*] Version: 2.2
-#[*] Author: JRIC2002
-#[*] Date of creation: 15/03/2019
+#Author: José Rodolfo (JRIC2002)
 
 #Modules
 
@@ -17,29 +13,35 @@ import sys
 class Color:
     """ Colores en código ANSI. """
 
+    #Styles
+    reset = "\033[0m"
+    bold = "\033[1m"
+    dark = "\033[2m"
+    italic = "\033[3m"
+    underline = "\033[4m"
+    reverse = "\033[7m"
+    hidden = "\033[8m"
+
     #Foreground
-    blackColor = "\033[0;30m"
-    grayColor = "\033[1;30m"
-    redColor = "\033[1;31m"
-    greenColor = "\033[1;32m"
-    yellowColor = "\033[1;33m"
-    blueColor = "\033[1;34m"
-    purpleColor = "\033[1;35m"
-    cyanColor = "\033[1;36m"
-    whiteColor = "\033[1;37m"
-    resetColor = "\033[0;0m"
+    black= "\033[30m"
+    gray = "\033[1;30m"
+    red= "\033[31m"
+    green = "\033[32m"
+    yellow = "\033[33m"
+    blue = "\033[34m"
+    purple = "\033[35m"
+    cyan = "\033[36m"
+    white = "\033[37m"
 
     #Background
-    blackBackColor = "\033[0;40m"
-    grayBackColor = "\033[1;40m"
-    redBackColor = "\033[1;41m"
-    greenBackColor = "\033[1;42m"
-    yellowBackColor = "\033[1;43m"
-    blueBackColor = "\033[1;44m"
-    purpleBackColor = "\033[1;45m"
-    cyanBackColor = "\033[1;46m"
-    whiteBackColor = "\033[1;47m"
-    resetBackColor = "\033[0;0m"
+    bgBlack = "\033[40m"
+    bgRed = "\033[41m"
+    bgGreen = "\033[42m"
+    bgYellow = "\033[43m"
+    bgBlue = "\033[44m"
+    bgPurple = "\033[45m"
+    bgCyan = "\033[46m"
+    bgWhite = "\033[47m"
 
 #Instancia de la clase Color
 color = Color()
@@ -54,20 +56,20 @@ class Start:
     def logo(self):
         """ Imprime el logo de la herramienta GeoTrackerIP. """
     
+        print("{}".format(color.bold))
+        print("      {}__ ___ __ {}_____ ___  __   ____  _____ ___   {} _ ___ ".format(color.blue, color.green, color.cyan))
+        print("     {}/ _] __/__\{}_   _| _ \/  \ / _/ |/ / __| _ \{}__{}| | _,\ ".format(color.blue, color.green, color.white, color.cyan))
+        print("    {}| [/\ _| \/ |{}| | | v / /\ | \_|   <| _|| v /{}__{}| | v_/ ".format(color.blue, color.green, color.white, color.cyan))
+        print("     {}\__/___\__/ {}|_| |_|_\_||_|\__/_|\_\___|_|_\  {}|_|_|   {}v2.3 ".format(color.blue, color.green, color.cyan, color.white))
         print("")
-        print("      {}__ ___ __ {}_____ ___  __   ____  _____ ___   {} _ ___ ".format(color.blueColor, color.greenColor, color.cyanColor))
-        print("     {}/ _] __/__\{}_   _| _ \/  \ / _/ |/ / __| _ \{}__{}| | _,\ ".format(color.blueColor, color.greenColor, color.whiteColor, color.cyanColor))
-        print("    {}| [/\ _| \/ |{}| | | v / /\ | \_|   <| _|| v /{}__{}| | v_/ ".format(color.blueColor, color.greenColor, color.whiteColor, color.cyanColor))
-        print("     {}\__/___\__/ {}|_| |_|_\_||_|\__/_|\_\___|_|_\  {}|_|_|   {}v2.2 ".format(color.blueColor, color.greenColor, color.cyanColor, color.whiteColor))
-        print("")
-        print("               {}<<< {}Tool coded by:{} @JRIC2002 {}>>>{}".format(color.redColor, color.yellowColor, color.whiteColor, color.redColor, color.whiteColor))
-        print("    {}<<< {}Description:{} Geolocate an IP address or Domain {}>>>{}".format(color.redColor, color.yellowColor, color.whiteColor, color.redColor, color.resetColor))
+        print("               {}<<< {}Tool coded by:{} @JRIC2002 {}>>>{}".format(color.red, color.yellow, color.white, color.red, color.white))
+        print("    {}<<< {}Description:{} Geolocate an IP address or Domain {}>>>{}".format(color.red, color.yellow, color.white, color.red, color.reset))
         print("")
     
     def help_menu(self):
         """ Imprime el menú de ayuda de la herramienta GeoTrackerIP. """
     
-        print("{}Usage: python3 GeoTrackerIP.py [options]".format(color.whiteColor))
+        print("{}{}Usage: python3 GeoTrackerIP.py [options]".format(color.bold, color.white))
         print("")
         print("Options:")
         print("   -h, --help              Show this help message and exit.")
@@ -76,20 +78,20 @@ class Start:
         print("   Target:")
         print("      At least one of these options has to be provided to define the target(s).")
         print("")
-        print("      -t, --target            IP Address or Domain to be analyzed.{}".format(color.resetColor))
+        print("      -t, --target            IP Address or Domain to be analyzed.{}".format(color.reset))
     
     def version(self):
         """ Imprime la versión de la herramienta GeoTrackerIP. """
     
-        print("{}#GeoTrackerIP version 2.2{}".format(color.whiteColor, color.resetColor))
+        print("{}{}#GeoTrackerIP version 2.3{}".format(color.bold, color.white, color.reset))
     
     def error_args(self):
         """ Imprime un mensaje de error de argumentos. """
     
-        print("{}Usage: python3 GeoTrackerIP.py [options]".format(color.whiteColor))
+        print("{}{}Usage: python3 GeoTrackerIP.py [options]".format(color.bold, color.white))
         print("")
         print("GeoTrackerIP.py: Error: Invalid option.")
-        print("Use -h or --help to see the help menu.{}".format(color.resetColor))
+        print("Use -h or --help to see the help menu.{}".format(color.reset))
 
 #Instancia de la clase Start
 start = Start()
@@ -106,7 +108,7 @@ class Functions:
 
         #Datos
         try:
-            print("{}IP Address/Domain(URL):{} {}".format(color.blueColor, color.whiteColor, ip))
+            print("{}{}IP Address/Domain(URL):{} {}".format(color.bold, color.blue, color.white, ip))
             while True:
                 if "http://" in ip:
                     ip = ip[7:]
@@ -143,28 +145,28 @@ class Functions:
 
             #Imprime los resultados obtenidos
             print("")
-            print("{}[{}*{}] {}Target:{} {}".format(color.greenColor, color.whiteColor, color.greenColor, color.whiteColor, color.greenColor, target))
-            print("{}[{}*{}] {}Status:{} {}".format(color.greenColor, color.whiteColor, color.greenColor, color.whiteColor, color.greenColor, status))
-            print("{}[{}*{}] {}IP:{} {}".format(color.greenColor, color.whiteColor, color.greenColor, color.whiteColor, color.greenColor, direccion_ip))
-            print("{}[{}*{}] {}ASN:{} {}".format(color.greenColor, color.whiteColor, color.greenColor, color.whiteColor, color.greenColor, asn))
-            print("{}[{}*{}] {}City:{} {}".format(color.greenColor, color.whiteColor, color.greenColor, color.whiteColor, color.greenColor, ciudad))
-            print("{}[{}*{}] {}Country:{} {}".format(color.greenColor, color.whiteColor, color.greenColor, color.whiteColor, color.greenColor, pais))
-            print("{}[{}*{}] {}Country Code:{} {}".format(color.greenColor, color.whiteColor, color.greenColor, color.whiteColor, color.greenColor, codigo_pais))
-            print("{}[{}*{}] {}ISP:{} {}".format(color.greenColor, color.whiteColor, color.greenColor, color.whiteColor, color.greenColor, isp))
-            print("{}[{}*{}] {}Latitude:{} {}".format(color.greenColor, color.whiteColor, color.greenColor, color.whiteColor, color.greenColor, latitud))
-            print("{}[{}*{}] {}Longitude:{} {}".format(color.greenColor, color.whiteColor, color.greenColor, color.whiteColor, color.greenColor, longitud))
-            print("{}[{}*{}] {}Organization:{} {}".format(color.greenColor, color.whiteColor, color.greenColor, color.whiteColor, color.greenColor, organizacion))
-            print("{}[{}*{}] {}Region Code:{} {}".format(color.greenColor, color.whiteColor, color.greenColor, color.whiteColor, color.greenColor, codigo_region))
-            print("{}[{}*{}] {}Region Name:{} {}".format(color.greenColor, color.whiteColor, color.greenColor, color.whiteColor, color.greenColor, region))
-            print("{}[{}*{}] {}Timezone:{} {}".format(color.greenColor, color.whiteColor, color.greenColor, color.whiteColor, color.greenColor, timezone))
-            print("{}[{}*{}] {}Zip Code:{} {}".format(color.greenColor, color.whiteColor, color.greenColor, color.whiteColor, color.greenColor, codigo_zip))
-            print("{}[{}*{}] {}Mobile:{} {}".format(color.greenColor, color.whiteColor, color.greenColor, color.whiteColor, color.greenColor, mobile))
-            print("{}[{}*{}] {}Proxy:{} {}".format(color.greenColor, color.whiteColor, color.greenColor, color.whiteColor, color.greenColor, proxy))
-            print("{}[{}*{}] {}Google Maps:{} {}".format(color.greenColor, color.whiteColor, color.greenColor, color.whiteColor, color.greenColor, google_maps))
-            print("{}".format(color.resetColor))
+            print("{}[{}*{}] {}Target:{} {}".format(color.green, color.white, color.green, color.white, color.green, target))
+            print("{}[{}*{}] {}Status:{} {}".format(color.green, color.white, color.green, color.white, color.green, status))
+            print("{}[{}*{}] {}IP:{} {}".format(color.green, color.white, color.green, color.white, color.green, direccion_ip))
+            print("{}[{}*{}] {}ASN:{} {}".format(color.green, color.white, color.green, color.white, color.green, asn))
+            print("{}[{}*{}] {}City:{} {}".format(color.green, color.white, color.green, color.white, color.green, ciudad))
+            print("{}[{}*{}] {}Country:{} {}".format(color.green, color.white, color.green, color.white, color.green, pais))
+            print("{}[{}*{}] {}Country Code:{} {}".format(color.green, color.white, color.green, color.white, color.green, codigo_pais))
+            print("{}[{}*{}] {}ISP:{} {}".format(color.green, color.white, color.green, color.white, color.green, isp))
+            print("{}[{}*{}] {}Latitude:{} {}".format(color.green, color.white, color.green, color.white, color.green, latitud))
+            print("{}[{}*{}] {}Longitude:{} {}".format(color.green, color.white, color.green, color.white, color.green, longitud))
+            print("{}[{}*{}] {}Organization:{} {}".format(color.green, color.white, color.green, color.white, color.green, organizacion))
+            print("{}[{}*{}] {}Region Code:{} {}".format(color.green, color.white, color.green, color.white, color.green, codigo_region))
+            print("{}[{}*{}] {}Region Name:{} {}".format(color.green, color.white, color.green, color.white, color.green, region))
+            print("{}[{}*{}] {}Timezone:{} {}".format(color.green, color.white, color.green, color.white, color.green, timezone))
+            print("{}[{}*{}] {}Zip Code:{} {}".format(color.green, color.white, color.green, color.white, color.green, codigo_zip))
+            print("{}[{}*{}] {}Mobile:{} {}".format(color.green, color.white, color.green, color.white, color.green, mobile))
+            print("{}[{}*{}] {}Proxy:{} {}".format(color.green, color.white, color.green, color.white, color.green, proxy))
+            print("{}[{}*{}] {}Google Maps:{} {}".format(color.green, color.white, color.green, color.white, color.green, google_maps))
+            print("{}".format(color.reset))
         except Exception:
             print("")
-            print("{}Error: IP Address/Domain(URL) does not exist.{}".format(color.redColor, color.resetColor))
+            print("{}Error: IP Address/Domain(URL) does not exist.{}".format(color.red, color.reset))
 
 #Instancia de la clase Functions
 functions = Functions()
