@@ -12,29 +12,35 @@ import sys
 class Color:
     """ Colores en código ANSI. """
 
+    #Styles
+    reset = "\033[0m"
+    bold = "\033[1m"
+    dark = "\033[2m"
+    italic = "\033[3m"
+    underline = "\033[4m"
+    reverse = "\033[7m"
+    hidden = "\033[8m"
+
     #Foreground
-    blackColor = "\033[0;30m"
-    grayColor = "\033[1;30m"
-    redColor = "\033[1;31m"
-    greenColor = "\033[1;32m"
-    yellowColor = "\033[1;33m"
-    blueColor = "\033[1;34m"
-    purpleColor = "\033[1;35m"
-    cyanColor = "\033[1;36m"
-    whiteColor = "\033[1;37m"
-    resetColor = "\033[0;0m"
-    
+    black= "\033[30m"
+    gray = "\033[1;30m"
+    red= "\033[31m"
+    green = "\033[32m"
+    yellow = "\033[33m"
+    blue = "\033[34m"
+    purple = "\033[35m"
+    cyan = "\033[36m"
+    white = "\033[37m"
+
     #Background
-    blackBackColor = "\033[0;40m"
-    grayBackColor = "\033[1;40m"
-    redBackColor = "\033[1;41m"
-    greenBackColor = "\033[1;42m"
-    yellowBackColor = "\033[1;43m"
-    blueBackColor = "\033[1;44m"
-    purpleBackColor = "\033[1;45m"
-    cyanBackColor = "\033[1;46m"
-    whiteBackColor = "\033[1;47m"
-    resetBackColor = "\033[0;0m"
+    bgBlack = "\033[40m"
+    bgRed = "\033[41m"
+    bgGreen = "\033[42m"
+    bgYellow = "\033[43m"
+    bgBlue = "\033[44m"
+    bgPurple = "\033[45m"
+    bgCyan = "\033[46m"
+    bgWhite = "\033[47m"
 
 #Instancia de la clase Color
 color = Color()
@@ -54,14 +60,14 @@ def clean():
 def logo():
     """ Imprime el logo de la herramienta GeoTrackerIP. """
 
+    print("{}".format(color.bold))
+    print("      {}__ ___ __ {}_____ ___  __   ____  _____ ___   {} _ ___ ".format(color.blue, color.green, color.cyan))
+    print("     {}/ _] __/__\{}_   _| _ \/  \ / _/ |/ / __| _ \{}__{}| | _,\ ".format(color.blue, color.green, color.white, color.cyan))
+    print("    {}| [/\ _| \/ |{}| | | v / /\ | \_|   <| _|| v /{}__{}| | v_/ ".format(color.blue, color.green, color.white, color.cyan))
+    print("     {}\__/___\__/ {}|_| |_|_\_||_|\__/_|\_\___|_|_\  {}|_|_|   {}v2.2 ".format(color.blue, color.green, color.cyan, color.white))
     print("")
-    print("      {}__ ___ __ {}_____ ___  __   ____  _____ ___   {} _ ___ ".format(color.blueColor, color.greenColor, color.cyanColor))
-    print("     {}/ _] __/__\{}_   _| _ \/  \ / _/ |/ / __| _ \{}__{}| | _,\ ".format(color.blueColor, color.greenColor, color.whiteColor, color.cyanColor))
-    print("    {}| [/\ _| \/ |{}| | | v / /\ | \_|   <| _|| v /{}__{}| | v_/ ".format(color.blueColor, color.greenColor, color.whiteColor, color.cyanColor))
-    print("     {}\__/___\__/ {}|_| |_|_\_||_|\__/_|\_\___|_|_\  {}|_|_|   {}v2.2 ".format(color.blueColor, color.greenColor, color.cyanColor, color.whiteColor))
-    print("")
-    print("               {}<<< {}Tool coded by:{} @JRIC2002 {}>>>{}".format(color.redColor, color.yellowColor, color.whiteColor, color.redColor, color.whiteColor))
-    print("    {}<<< {}Description:{} Geolocate an IP address or Domain {}>>>{}".format(color.redColor, color.yellowColor, color.whiteColor, color.redColor, color.resetColor))
+    print("               {}<<< {}Tool coded by:{} @JRIC2002 {}>>>{}".format(color.red, color.yellow, color.white, color.red, color.white))
+    print("    {}<<< {}Description:{} Geolocate an IP address or Domain {}>>>{}".format(color.red, color.yellow, color.white, color.red, color.reset))
     print("")
 
 def install():
@@ -69,13 +75,13 @@ def install():
 
     bucle = itertools.cycle("/-\|")
     for i in range(30):
-        print("{}[{}*{}] {}Installing Modules...{}{}".format(color.cyanColor, color.whiteColor, color.cyanColor, color.greenColor, next(bucle),color.whiteColor), end='\r')
+        print("{}{}[{}*{}] {}Installing Modules...{}{}".format(color.bold, color.cyan, color.white, color.cyan, color.green, next(bucle),color.white), end='\r')
         time.sleep(0.1)
     print("")
     print("")
     os.system("python3 -m pip install requests")
     print("")
-    print("                     {}>> Installation Complete <<{}".format(color.blueColor, color.resetColor))
+    print("                     {}>> Installation Complete <<{}".format(color.blue, color.reset))
     print("")
     time.sleep(1)
 
