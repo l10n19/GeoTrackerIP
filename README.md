@@ -1,11 +1,11 @@
 # GeoTrackerIP
-![GeoTracker - Version](https://img.shields.io/badge/GeoTrackerIP-v2.2-brightgreen)
+![GeoTracker - Version](https://img.shields.io/badge/GeoTrackerIP-v2.3-brightgreen)
 ![Release - Stable](https://img.shields.io/badge/Release-Stable-brightgreen)
 ![Supported OS - Linux](https://img.shields.io/badge/Supported%20OS-Linux-blue)
 
 GeoTrackerIP es una herramienta que analiza y recopila información de una dirección IP o dominio, por ejemplo: Ubicación Geográfica, ISP(Proveedor de Servicios de Internet), Ciudad, País, entre otros.
 
-![GeoTrackerIP - Screenshot](https://github.com/JRIC2002/GeoTrackerIP/blob/master/.Images/GeoTrackerIP-Screenshot[01].jpg)
+![GeoTrackerIP - Screenshot](.images/GeoTrackerIP-Screenshot[01].png)
 
 ## Información
 Esta herramienta es solo para fines educativos. El desarrollador no asume ninguna responsabilidad y no es responsable del mal uso o daño causado por este programa.
