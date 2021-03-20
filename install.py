@@ -28,7 +28,7 @@ class Color:
     green = "\033[32m"
     yellow = "\033[33m"
     blue = "\033[34m"
-    purple = "\033[35m"
+    magenta = "\033[35m"
     cyan = "\033[36m"
     white = "\033[37m"
 
@@ -38,7 +38,7 @@ class Color:
     bgGreen = "\033[42m"
     bgYellow = "\033[43m"
     bgBlue = "\033[44m"
-    bgPurple = "\033[45m"
+    bgMagenta = "\033[45m"
     bgCyan = "\033[46m"
     bgWhite = "\033[47m"
 
@@ -64,7 +64,7 @@ def logo():
     print("      {}__ ___ __ {}_____ ___  __   ____  _____ ___   {} _ ___ ".format(color.blue, color.green, color.cyan))
     print("     {}/ _] __/__\{}_   _| _ \/  \ / _/ |/ / __| _ \{}__{}| | _,\ ".format(color.blue, color.green, color.white, color.cyan))
     print("    {}| [/\ _| \/ |{}| | | v / /\ | \_|   <| _|| v /{}__{}| | v_/ ".format(color.blue, color.green, color.white, color.cyan))
-    print("     {}\__/___\__/ {}|_| |_|_\_||_|\__/_|\_\___|_|_\  {}|_|_|   {}v2.2 ".format(color.blue, color.green, color.cyan, color.white))
+    print("     {}\__/___\__/ {}|_| |_|_\_||_|\__/_|\_\___|_|_\  {}|_|_|   {} ".format(color.blue, color.green, color.cyan, color.white))
     print("")
     print("               {}<<< {}Tool coded by:{} @JRIC2002 {}>>>{}".format(color.red, color.yellow, color.white, color.red, color.white))
     print("    {}<<< {}Description:{} Geolocate an IP address or Domain {}>>>{}".format(color.red, color.yellow, color.white, color.red, color.reset))
